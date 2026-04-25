@@ -1,0 +1,69 @@
+<!--
+  templateType: section
+  label: Hero banner
+  isAvailableForNewContent: true
+  description: "Two-column hero with title, body, trust pills, schedule card on left and image on right."
+-->
+{% dnd_section
+  class="sl-hero",
+  background_color={{ context.background_color or "#ffffff" }},
+  padding={
+    "default": {
+      "top": 64,
+      "right": 20,
+      "bottom": 64,
+      "left": 20
+    },
+    "mobile": {
+      "top": 48,
+      "right": 20,
+      "bottom": 48,
+      "left": 20
+    }
+  },
+  vertical_alignment="MIDDLE"
+%}
+  {% dnd_module
+    path="@hubspot/rich_text",
+    html={{
+      context.content
+      or '<div class="sl-hero__content">'
+        ~ '<h1>Roof Replacement<br>in Myrtle Beach, SC</h1>'
+        ~ '<p class="sl-hero__lead">Local experts providing high-quality roof replacement services in Myrtle Beach.</p>'
+        ~ '<ul class="sl-hero__trust">'
+          ~ '<li>Licensed</li>'
+          ~ '<li>Insured</li>'
+          ~ '<li>Local Experts</li>'
+          ~ '<li>Insurance Claim Specialists</li>'
+        ~ '</ul>'
+        ~ '<div class="sl-hero__card">'
+          ~ '<h4>Schedule Your Free Inspection</h4>'
+          ~ '<ul class="sl-hero__card-checks">'
+            ~ '<li><span class="sl-hero__check" aria-hidden="true">✓</span>No-pressure consultation</li>'
+            ~ '<li><span class="sl-hero__check" aria-hidden="true">✓</span>Thorough assessment</li>'
+            ~ '<li><span class="sl-hero__check" aria-hidden="true">✓</span>Professional assistance</li>'
+          ~ '</ul>'
+          ~ '<a class="sl-hero__btn" href="#">Get Free Estimate</a>'
+        ~ '</div>'
+      ~ '</div>'
+    }},
+    offset=0,
+    width=6
+  %}
+  {% end_dnd_module %}
+
+  {% dnd_module
+    path="@hubspot/linked_image",
+    img={
+      "alt": context.image_alt or "Myrtle Beach SkyWheel at night",
+      "loading": context.image_loading or "eager",
+      "size_type": "auto_custom_max",
+      "max_width": context.image_width or 620,
+      "max_height": context.image_height or 480,
+      "src": context.image or "https://placehold.co/720x560/2a3a4f/ffffff?text=Myrtle+Beach+Image"
+    },
+    offset=6,
+    width=6
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

@@ -1,0 +1,48 @@
+[
+  {
+    "label": "FAQ items",
+    "name": "items",
+    "type": "group",
+    "occurrence": {
+      "default": 5,
+      "min": 1,
+      "sorting_label_field": "question"
+    },
+    "children": [
+      {
+        "label": "Question",
+        "name": "question",
+        "type": "text",
+        "default": "How long does a roof typically last in Myrtle Beach?"
+      },
+      {
+        "label": "Answer",
+        "name": "answer",
+        "type": "richtext",
+        "default": "<p>Most asphalt shingle roofs last 15–25 years, but coastal sun, wind, and salt air can reduce lifespan. We can inspect your roof and give an honest timeline based on its condition.</p>"
+      }
+    ],
+    "default": [
+      {
+        "question": "How long does a roof typically last in Myrtle Beach?",
+        "answer": "<p>Most asphalt shingle roofs last 15–25 years, but coastal sun, wind, and salt air can reduce lifespan. We can inspect your roof and give an honest timeline based on its condition.</p>"
+      },
+      {
+        "question": "What are the signs that my roof needs to be replaced?",
+        "answer": "<p>Common signs include missing or curling shingles, frequent leaks, soft spots, granule loss, and visible sagging. If you’re unsure, we’ll perform a thorough inspection.</p>"
+      },
+      {
+        "question": "Will homeowners insurance pay for my roof replacement?",
+        "answer": "<p>Insurance may cover storm-related damage depending on your policy and the cause of the issue. We help document damage and can coordinate with your adjuster.</p>"
+      },
+      {
+        "question": "Does Linta Roofing offer emergency services?",
+        "answer": "<p>Yes. If your roof is compromised due to a storm or active leak, contact us right away. We can provide temporary protection and schedule repairs quickly.</p>"
+      },
+      {
+        "question": "What types of warranties does Linta Roofing provide?",
+        "answer": "<p>We offer workmanship warranties and manufacturer-backed material warranties depending on the roofing system you choose. We’ll review warranty options during your estimate.</p>"
+      }
+    ]
+  }
+]

@@ -1,0 +1,89 @@
+<!--
+  templateType: section
+  label: Roof replacement in surrounding areas
+  isAvailableForNewContent: true
+  description: "Six image cards in a 3x2 grid with title and description below each, plus a centered yellow CTA."
+-->
+{% dnd_section
+  class="sl-surrounding-areas",
+  background_color={{ context.background_color or "#ffffff" }},
+  padding={
+    "default": {
+      "top": 80,
+      "right": 20,
+      "bottom": 80,
+      "left": 20
+    },
+    "mobile": {
+      "top": 60,
+      "right": 20,
+      "bottom": 60,
+      "left": 20
+    }
+  },
+  vertical_alignment="MIDDLE"
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html={{
+          context.heading
+          or '<div class="sl-surrounding-areas__heading"><h2>Roof Replacement in Surrounding Areas</h2></div>'
+        }}
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html={{
+          context.cards
+          or '<div class="sl-surrounding-areas__grid">'
+            ~ '<article class="sl-surrounding-areas__card">'
+              ~ '<div class="sl-surrounding-areas__image"><img src="https://placehold.co/420x260/cfcfcf/333?text=Conway" alt="Conway"></div>'
+              ~ '<h3>Conway</h3>'
+              ~ '<p>Providing expert roof replacement services to the Conway area. Decades of experience for its charming homes.</p>'
+            ~ '</article>'
+            ~ '<article class="sl-surrounding-areas__card">'
+              ~ '<div class="sl-surrounding-areas__image"><img src="https://placehold.co/420x260/c8c8c8/333?text=North+Myrtle+Beach" alt="North Myrtle Beach"></div>'
+              ~ '<h3>North Myrtle Beach</h3>'
+              ~ '<p>Professional roofing solutions for the North Myrtle Beach community, designed to handle local salt-air corrosion.</p>'
+            ~ '</article>'
+            ~ '<article class="sl-surrounding-areas__card">'
+              ~ '<div class="sl-surrounding-areas__image"><img src="https://placehold.co/420x260/d6d6d6/333?text=Surfside+Beach" alt="Surfside Beach"></div>'
+              ~ '<h3>Surfside Beach</h3>'
+              ~ '<p>Dedicated roof replacement services for The Family Beach&trade; — durable, long-lasting craftsmanship that protects.</p>'
+            ~ '</article>'
+            ~ '<article class="sl-surrounding-areas__card">'
+              ~ '<div class="sl-surrounding-areas__image"><img src="https://placehold.co/420x260/cfcfcf/333?text=Carolina+Forest" alt="Carolina Forest"></div>'
+              ~ '<h3>Carolina Forest</h3>'
+              ~ '<p>Supporting the rapid growth of Carolina Forest with reliable roof installation and replacement services for its modern family homes.</p>'
+            ~ '</article>'
+            ~ '<article class="sl-surrounding-areas__card">'
+              ~ '<div class="sl-surrounding-areas__image"><img src="https://placehold.co/420x260/d0d0d0/333?text=Little+River" alt="Little River"></div>'
+              ~ '<h3>Little River</h3>'
+              ~ '<p>A unique waterfront serving the area requires roof replacement that maintains the picturesque charm of every home.</p>'
+            ~ '</article>'
+          ~ '</div>'
+        }}
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html={{
+          context.cta
+          or '<div class="sl-surrounding-areas__cta"><a class="sl-surrounding-areas__btn" href="#">See All Locations</a></div>'
+        }}
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

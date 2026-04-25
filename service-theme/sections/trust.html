@@ -1,0 +1,61 @@
+<!--
+  templateType: section
+  label: Trust statement
+  isAvailableForNewContent: true
+  description: "Two-column with image and content + checklist + CTA."
+-->
+{% dnd_section
+  class="st-trust",
+  background_color={{ context.background_color or "#ffffff" }},
+  padding={
+    "default": {
+      "top": 80,
+      "right": 20,
+      "bottom": 80,
+      "left": 20
+    },
+    "mobile": {
+      "top": 56,
+      "right": 20,
+      "bottom": 56,
+      "left": 20
+    }
+  },
+  vertical_alignment="MIDDLE"
+%}
+  {% dnd_module
+    path="@hubspot/linked_image",
+    img={
+      "alt": context.image_alt or "Aerial view of a residential roof",
+      "loading": context.image_loading or "lazy",
+      "size_type": "auto_custom_max",
+      "max_width": context.image_width or 540,
+      "max_height": context.image_height or 420,
+      "src": context.image or "https://placehold.co/640x480/dfe6ee/2a3a4f?text=Roof+Aerial"
+    },
+    offset=0,
+    width=6
+  %}
+  {% end_dnd_module %}
+
+  {% dnd_module
+    path="@hubspot/rich_text",
+    html={{
+      context.content
+      or '<div class="st-trust__content">'
+        ~ '<h2>You Need a Roofing Company You Can Trust</h2>'
+        ~ '<p>Your shouldn&#39;t have to worry about a roofer taking advantage of you. That&#39;s why we focus on clear communication, honesty, and doing what&#39;s right for your home.</p>'
+        ~ '<ul class="st-trust__checklist">'
+          ~ '<li><span class="st-trust__check" aria-hidden="true">✓</span>Family owned and operated since 1948</li>'
+          ~ '<li><span class="st-trust__check" aria-hidden="true">✓</span>Fully licensed and insured</li>'
+          ~ '<li><span class="st-trust__check" aria-hidden="true">✓</span>GAF Master Elite Contractor</li>'
+          ~ '<li><span class="st-trust__check" aria-hidden="true">✓</span>Workmanship warranties up to 25 years</li>'
+        ~ '</ul>'
+        ~ '<a class="st-trust__btn" href="#">View Pricing</a>'
+      ~ '</div>'
+    }},
+    offset=6,
+    width=6
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

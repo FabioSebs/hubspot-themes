@@ -1,0 +1,54 @@
+<!--
+  templateType: section
+  label: Who we are
+  isAvailableForNewContent: true
+  description: "Two-column with image on the left and small heading + body on the right."
+-->
+{% dnd_section
+  class="sl-who",
+  background_color={{ context.background_color or "#ffffff" }},
+  padding={
+    "default": {
+      "top": 40,
+      "right": 20,
+      "bottom": 80,
+      "left": 20
+    },
+    "mobile": {
+      "top": 32,
+      "right": 20,
+      "bottom": 56,
+      "left": 20
+    }
+  },
+  vertical_alignment="MIDDLE"
+%}
+  {% dnd_module
+    path="@hubspot/linked_image",
+    img={
+      "alt": context.image_alt or "Roof structure",
+      "loading": context.image_loading or "lazy",
+      "size_type": "auto_custom_max",
+      "max_width": context.image_width or 620,
+      "max_height": context.image_height or 380,
+      "src": context.image or "https://placehold.co/720x440/d1d5db/4b5563?text=Roof+Structure"
+    },
+    offset=0,
+    width=6
+  %}
+  {% end_dnd_module %}
+
+  {% dnd_module
+    path="@hubspot/rich_text",
+    html={{
+      context.content
+      or '<div class="sl-who__content">'
+        ~ '<h2>Who We Are?</h2>'
+        ~ '<p>If your roof is damaged or aging, Linta Roofing offers professional roof replacement services in Myrtle Beach designed to withstand coastal weather conditions.</p>'
+      ~ '</div>'
+    }},
+    offset=6,
+    width=6
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

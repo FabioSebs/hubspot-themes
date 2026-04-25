@@ -1,0 +1,58 @@
+<!--
+  templateType: section
+  label: Signs you need roof repair
+  isAvailableForNewContent: true
+  description: "Five feature cards with yellow square icons in a 3+2 grid."
+-->
+{% dnd_section
+  class="st-signs",
+  background_color={{ context.background_color or "#ffffff" }},
+  padding={
+    "default": {
+      "top": 80,
+      "right": 20,
+      "bottom": 80,
+      "left": 20
+    },
+    "mobile": {
+      "top": 60,
+      "right": 20,
+      "bottom": 60,
+      "left": 20
+    }
+  },
+  vertical_alignment="MIDDLE"
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html={{
+          context.heading
+          or '<div class="st-signs__heading"><h2>Signs You Need Roof Repair</h2><p>Not sure if your roof needs attention? Here are common warning signs homeowners in Myrtle Beach should never ignore:</p></div>'
+        }}
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html={{
+          context.signs
+          or '<div class="st-signs__grid">'
+            ~ '<div class="st-signs__card"><div class="st-signs__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11 14 15 10"></polyline></svg></div><h3>Leaks &amp; Water Stains</h3><p>Water intrusion can weaken your structure and lead to mold growth.</p></div>'
+            ~ '<div class="st-signs__card"><div class="st-signs__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11 14 15 10"></polyline></svg></div><h3>Missing or Damaged Shingles</h3><p>Exposes your roof to further damage and reduces energy efficiency.</p></div>'
+            ~ '<div class="st-signs__card"><div class="st-signs__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11 14 15 10"></polyline></svg></div><h3>Sagging Roof Areas</h3><p>A serious structural warning sign that requires immediate attention.</p></div>'
+            ~ '<div class="st-signs__card"><div class="st-signs__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11 14 15 10"></polyline></svg></div><h3>Storm Damage</h3><p>High winds and hail can create hidden issues that worsen over time.</p></div>'
+            ~ '<div class="st-signs__card"><div class="st-signs__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11 14 15 10"></polyline></svg></div><h3>Aging Roof (15-25 Years)</h3><p>Older roofs become vulnerable to failure and costly damage.</p></div>'
+          ~ '</div>'
+        }}
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

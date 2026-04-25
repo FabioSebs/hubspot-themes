@@ -2,42 +2,56 @@
   templateType: global_partial
   label: Footer
 -->
-<footer class="footer">
+<footer class="st-footer">
   {% dnd_area "footer"
     label="Footer",
-    class="footer__container content-wrapper"
+    class="st-footer__container"
   %}
+    {% dnd_section
+      background_color="#000000",
+      padding={
+        "default": { "top": 56, "right": 20, "bottom": 32, "left": 20 },
+        "mobile":  { "top": 40, "right": 20, "bottom": 24, "left": 20 }
+      },
+      vertical_alignment="TOP"
+    %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html='<div class="st-footer__brand"><div class="st-footer__logo">LINTA<br><span>ROOFING</span></div><p>Linta Roofing provides expert roof repair services in Myrtle Beach and surrounding areas. Protect your home with trusted local roofing specialists.</p></div>',
+        offset=0,
+        width=4
+      %}
+      {% end_dnd_module %}
 
-    {# Social follow and copyright #}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html='<div class="st-footer__col"><h4>Contact</h4><ul><li><span class="st-footer__icon" aria-hidden="true">☎</span>(843) 272-1906</li><li><span class="st-footer__icon" aria-hidden="true">✉</span>office@lintaroofing.com</li><li><span class="st-footer__icon" aria-hidden="true">⌖</span>324 State Highway 57 S<br>Little River, SC 29566</li></ul></div>',
+        offset=4,
+        width=4
+      %}
+      {% end_dnd_module %}
 
-    {% dnd_section %}
-      {% dnd_column %}
-        {% dnd_row %}
-          {% dnd_module path="../../modules/social-follow" %}
-            {% module_attribute "social_link" is_json=True %}
-              [
-                {"social_account": "facebook-f"},
-                {"social_account": "linkedin-in"},
-                {"social_account": "twitter"},
-                {"social_account": "instagram"}
-              ]
-            {% end_module_attribute %}
-          {% end_dnd_module %}
-        {% end_dnd_row %}
-        {% dnd_row
-          margin={
-            "top": 12,
-            "bottom": 12
-          }
-        %}
-          {% dnd_module
-            path="@hubspot/rich_text",
-            html='<div style="text-align: center; font-size: 0.7rem;"><span>© {{ year }} All rights reserved.</span></div>'
-          %}
-          {% end_dnd_module %}
-        {% end_dnd_row %}
-      {% end_dnd_column %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html='<div class="st-footer__col"><h4>Service Areas</h4><ul><li>Horry County, SC</li><li>Georgetown County, SC</li><li>Other SC Areas</li><li>Brunswick County, NC</li><li>Columbus County, NC</li></ul></div>',
+        offset=8,
+        width=4
+      %}
+      {% end_dnd_module %}
     {% end_dnd_section %}
 
+    {% dnd_section
+      background_color="#000000",
+      padding={
+        "default": { "top": 0, "right": 20, "bottom": 28, "left": 20 },
+        "mobile":  { "top": 0, "right": 20, "bottom": 24, "left": 20 }
+      }
+    %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html='<div class="st-footer__copy">© {{ year }} Linta Roofing. All rights reserved.</div>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
   {% end_dnd_area %}
 </footer>
