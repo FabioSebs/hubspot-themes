@@ -1,0 +1,15 @@
+<div class="lt-faq">
+  <div class="lt-faq__list">
+    {% for item in module.items %}
+      <details class="lt-faq__item">
+        <summary class="lt-faq__question">
+          <span class="lt-faq__question-text">{{ item.question|escape_html }}</span>
+          <span class="lt-faq__icon" aria-hidden="true">+</span>
+        </summary>
+        <div class="lt-faq__answer">
+          {{ item.answer|sanitize_html }}
+        </div>
+      </details>
+    {% endfor %}
+  </div>
+</div>

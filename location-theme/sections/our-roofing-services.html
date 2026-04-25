@@ -1,0 +1,59 @@
+<!--
+  templateType: section
+  label: Our roofing services
+  isAvailableForNewContent: true
+  description: "Six service cards in a 2x3 grid with icons, titles, descriptions, and Learn More links."
+-->
+{% dnd_section
+  class="lt-roofing-services",
+  background_color={{ context.background_color or "#ffffff" }},
+  padding={
+    "default": {
+      "top": 80,
+      "right": 20,
+      "bottom": 80,
+      "left": 20
+    },
+    "mobile": {
+      "top": 60,
+      "right": 20,
+      "bottom": 60,
+      "left": 20
+    }
+  },
+  vertical_alignment="MIDDLE"
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html={{
+          context.heading
+          or '<div class="lt-roofing-services__heading"><h2>Our Roofing Services in Myrtle Beach</h2></div>'
+        }}
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html={{
+          context.services
+          or '<div class="lt-roofing-services__grid">'
+            ~ '<div class="lt-roofing-services__card"><div class="lt-roofing-services__icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div><h3>Roof Replacement</h3><p>Full roof replacements using durable materials built to withstand coastal weather.</p><a class="lt-roofing-services__link" href="#">Learn More</a></div>'
+            ~ '<div class="lt-roofing-services__card"><div class="lt-roofing-services__icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></div><h3>Roof Repair</h3><p>Fast and reliable repairs for leaks, storm damage, and wear.</p><a class="lt-roofing-services__link" href="#">Learn More</a></div>'
+            ~ '<div class="lt-roofing-services__card"><div class="lt-roofing-services__icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></div><h3>Storm Damage</h3><p>Emergency response and insurance claim assistance after storms.</p><a class="lt-roofing-services__link" href="#">Learn More</a></div>'
+            ~ '<div class="lt-roofing-services__card"><div class="lt-roofing-services__icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div><h3>Inspections</h3><p>Thorough roof inspections to identify issues before they become costly.</p><a class="lt-roofing-services__link" href="#">Learn More</a></div>'
+            ~ '<div class="lt-roofing-services__card"><div class="lt-roofing-services__icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div><h3>Maintenance</h3><p>Regular maintenance plans to extend your roof’s lifespan.</p><a class="lt-roofing-services__link" href="#">Learn More</a></div>'
+            ~ '<div class="lt-roofing-services__card"><div class="lt-roofing-services__icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div><h3>Insurance Claims</h3><p>Expert help navigating claims to maximize your coverage.</p><a class="lt-roofing-services__link" href="#">Learn More</a></div>'
+          ~ '</div>'
+        }}
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

@@ -1,0 +1,9 @@
+.map-embed {
+  width: 100%;
+}
+
+.map-embed iframe {
+  width: 100%;
+  display: block;
+  border: 0;
+}

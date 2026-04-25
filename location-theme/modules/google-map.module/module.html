@@ -1,0 +1,12 @@
+<div class="map-embed">
+  {% if module.embed_url %}
+    <iframe
+      src="{{ module.embed_url|escape_url }}"
+      title="{{ module.title|escape_attr }}"
+      loading="{{ module.loading|escape_attr }}"
+      referrerpolicy="no-referrer-when-downgrade"
+      height="{{ module.height|escape_attr }}"
+      {% if module.allow_fullscreen %}allowfullscreen{% endif %}
+    ></iframe>
+  {% endif %}
+</div>

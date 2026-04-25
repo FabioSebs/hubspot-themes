@@ -1,0 +1,48 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Location
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+{% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container--location"
+%}
+
+  {# Hero banner #}
+
+  {% include_dnd_partial path="../sections/hero-banner.html" %}
+
+  {# Map + location copy #}
+
+  {% include_dnd_partial path="../sections/location-map.html" %}
+
+  {% include_dnd_partial path="../sections/service-areas.html" %}
+
+  {# Our roofing services #}
+
+  {% include_dnd_partial path="../sections/our-roofing-services.html" %}
+
+  {# Why choose us #}
+
+  {% include_dnd_partial path="../sections/why-choose-us.html" %}
+
+  {# Our roofing process #}
+
+  {% include_dnd_partial path="../sections/our-roofing-process.html" %}
+
+  {% include_dnd_partial path="../sections/reviews.html" %}
+
+  {% include_dnd_partial path="../sections/faq.html" %}
+
+  {# Call to action #}
+
+  {% include_dnd_partial path="../sections/estimate-cta.html" %}
+
+  {% include_dnd_partial path="../sections/bottom-strip.html" %}
+
+{% end_dnd_area %}
+{% endblock body %}

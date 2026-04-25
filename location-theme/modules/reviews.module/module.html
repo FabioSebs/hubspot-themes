@@ -1,0 +1,24 @@
+<div class="lt-reviews">
+  <div class="lt-reviews__grid">
+    {% for review in module.reviews %}
+      <article class="lt-reviews__card">
+        <div class="lt-reviews__stars" aria-label="{{ review.rating|escape_attr }} out of 5 stars">
+          <span class="lt-reviews__star{% if review.rating >= 1 %} is-filled{% endif %}" aria-hidden="true">★</span>
+          <span class="lt-reviews__star{% if review.rating >= 2 %} is-filled{% endif %}" aria-hidden="true">★</span>
+          <span class="lt-reviews__star{% if review.rating >= 3 %} is-filled{% endif %}" aria-hidden="true">★</span>
+          <span class="lt-reviews__star{% if review.rating >= 4 %} is-filled{% endif %}" aria-hidden="true">★</span>
+          <span class="lt-reviews__star{% if review.rating >= 5 %} is-filled{% endif %}" aria-hidden="true">★</span>
+        </div>
+        <h3 class="lt-reviews__title">{{ review.title|escape_html }}</h3>
+        <div class="lt-reviews__text">{{ review.review|sanitize_html }}</div>
+        <div class="lt-reviews__footer">
+          <div class="lt-reviews__name">{{ review.reviewer_name|escape_html }}</div>
+          <div class="lt-reviews__location">
+            <span class="lt-reviews__pin" aria-hidden="true"></span>
+            <span class="lt-reviews__neighborhood">{{ review.neighborhood|escape_html }}</span>
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Embed URL",
+    "name": "embed_url",
+    "type": "text",
+    "required": false,
+    "help_text": "Paste the Google Maps embed URL (the value inside the iframe src).",
+    "default": ""
+  },
+  {
+    "label": "Iframe title",
+    "name": "title",
+    "type": "text",
+    "default": "Google Map"
+  },
+  {
+    "label": "Height",
+    "name": "height",
+    "type": "number",
+    "display": "text",
+    "min": 200,
+    "max": 900,
+    "step": 10,
+    "suffix": "px",
+    "default": 360
+  },
+  {
+    "label": "Loading",
+    "name": "loading",
+    "type": "choice",
+    "choices": [
+      ["lazy", "Lazy"],
+      ["eager", "Eager"]
+    ],
+    "display": "radio",
+    "default": "lazy"
+  },
+  {
+    "label": "Allow fullscreen",
+    "name": "allow_fullscreen",
+    "type": "boolean",
+    "default": true
+  }
+]

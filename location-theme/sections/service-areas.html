@@ -1,0 +1,100 @@
+<!--
+  templateType: section
+  label: Service areas
+  isAvailableForNewContent: true
+  description: "Areas we serve section with image cards and descriptions."
+-->
+{% dnd_section
+  class="lt-service-areas",
+  background_color={{ context.background_color or "#ffffff" }},
+  padding={
+    "default": {
+      "top": 80,
+      "right": 20,
+      "bottom": 80,
+      "left": 20
+    },
+    "mobile": {
+      "top": 60,
+      "right": 20,
+      "bottom": 60,
+      "left": 20
+    }
+  },
+  vertical_alignment="MIDDLE"
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html={{
+          context.heading
+          or '<div class="lt-service-areas__heading"><h2>Areas We Serve Near Myrtle Beach</h2><p>From oceanfront properties along the Grand Strand to residential estates in Carolina Forest, we possess specialized expertise in addressing the unique roofing requirements of every community throughout the Myrtle Beach area.</p></div>'
+        }}
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html={{
+          context.areas
+          or '<div class="lt-service-areas__grid">'
+            ~ '<article class="lt-service-areas__card">'
+              ~ '<div class="lt-service-areas__image">'
+                ~ '<img src="' ~ get_asset_url("../images/serving-areas/market-common.jpg") ~ '" alt="Market Common" loading="lazy">'
+                ~ '<h3 class="lt-service-areas__title">Market Common</h3>'
+              ~ '</div>'
+              ~ '<div class="lt-service-areas__body"><p>This vibrant, mixed-use community features a blend of modern townhomes and retail spaces that require specialized roofing expertise. We provide HOA-coordinated services and commercial-grade solutions designed to handle the unique architectural standards and coastal weather challenges of the area.</p></div>'
+            ~ '</article>'
+
+            ~ '<article class="lt-service-areas__card">'
+              ~ '<div class="lt-service-areas__image">'
+                ~ '<img src="' ~ get_asset_url("../images/serving-areas/grande-dunes.jpg") ~ '" alt="Grande Dunes" loading="lazy">'
+                ~ '<h3 class="lt-service-areas__title">Grande Dunes</h3>'
+              ~ '</div>'
+              ~ '<div class="lt-service-areas__body"><p>Known for its luxury oceanfront estates and golf course properties, Grande Dunes requires premium roofing materials and meticulous craftsmanship. Our team specializes in high-end systems that offer maximum wind resistance and protection against salt air corrosion for custom luxury homes.</p></div>'
+            ~ '</article>'
+
+            ~ '<article class="lt-service-areas__card">'
+              ~ '<div class="lt-service-areas__image">'
+                ~ '<img src="' ~ get_asset_url("../images/serving-areas/carolina-forest.jpg") ~ '" alt="Carolina Forest" loading="lazy">'
+                ~ '<h3 class="lt-service-areas__title">Carolina Forest</h3>'
+              ~ '</div>'
+              ~ '<div class="lt-service-areas__body"><p>As a sprawling master-planned development with over 50 subdivisions, Carolina Forest homes often face issues with aging builder-grade roofs and high humidity. We are HOA-approved specialists who handle the entire architectural review process to ensure your roof replacement meets community standards.</p></div>'
+            ~ '</article>'
+
+            ~ '<article class="lt-service-areas__card">'
+              ~ '<div class="lt-service-areas__image">'
+                ~ '<img src="' ~ get_asset_url("../images/serving-areas/the-farm.jpg") ~ '" alt="The Farm at Carolina Forest" loading="lazy">'
+                ~ '<h3 class="lt-service-areas__title">The Farm at Carolina Forest</h3>'
+              ~ '</div>'
+              ~ '<div class="lt-service-areas__body"><p>This family-oriented community features diverse home styles, from custom single-family residences to townhomes that require careful maintenance. We understand the specific architectural guidelines of The Farm and provide efficient, respectful roofing services that protect your investment and enhance curb appeal.</p></div>'
+            ~ '</article>'
+
+            ~ '<article class="lt-service-areas__card">'
+              ~ '<div class="lt-service-areas__image">'
+                ~ '<img src="' ~ get_asset_url("../images/serving-areas/forest-brook.jpg") ~ '" alt="Forestbrook" loading="lazy">'
+                ~ '<h3 class="lt-service-areas__title">Forestbrook</h3>'
+              ~ '</div>'
+              ~ '<div class="lt-service-areas__body"><p>Many homes in the established Forestbrook neighborhood are reaching the critical 15–20 year threshold for roof replacement. We offer expert storm damage restoration and aging roof assessments to help families navigate insurance claims and keep their homes protected against coastal storms.</p></div>'
+            ~ '</article>'
+
+            ~ '<article class="lt-service-areas__card">'
+              ~ '<div class="lt-service-areas__image">'
+                ~ '<img src="' ~ get_asset_url("../images/serving-areas/arcadian-shores.jpg") ~ '" alt="Pine Lakes &amp; Arcadian Shores" loading="lazy">'
+                ~ '<h3 class="lt-service-areas__title">Pine Lakes &amp; Arcadian Shores</h3>'
+              ~ '</div>'
+              ~ '<div class="lt-service-areas__body"><p>These historic and scenic coastal communities feature a variety of traditional and modern roof designs that must withstand intense UV exposure and heavy rainfall. We provide comprehensive inspections and durable roofing solutions tailored to the distinct coastal requirements of these prestigious neighborhoods.</p></div>'
+            ~ '</article>'
+          ~ '</div>'
+        }}
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

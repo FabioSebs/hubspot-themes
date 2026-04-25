@@ -1,0 +1,71 @@
+[
+  {
+    "label": "Reviews",
+    "name": "reviews",
+    "type": "group",
+    "occurrence": {
+      "default": 3,
+      "min": 1,
+      "sorting_label_field": "reviews.title"
+    },
+    "children": [
+      {
+        "label": "Rating",
+        "name": "rating",
+        "type": "number",
+        "display": "text",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "default": 5
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "text",
+        "default": "Professional Repair"
+      },
+      {
+        "label": "Review",
+        "name": "review",
+        "type": "richtext",
+        "default": "<p>The repair was done quickly without cutting corners, and the quality of the work really shows.</p>"
+      },
+      {
+        "label": "Name",
+        "name": "reviewer_name",
+        "type": "text",
+        "default": "Carolina Barros C."
+      },
+      {
+        "label": "Neighborhood",
+        "name": "neighborhood",
+        "type": "text",
+        "default": "Grande Dunes"
+      }
+    ],
+    "default": [
+      {
+        "rating": 5,
+        "title": "Roof Replacement",
+        "review": "<p>J.A Edwards of America did an excellent job on our roof. From the first inspection to the final work, the team was responsive, respectful, and very professional.</p>",
+        "reviewer_name": "Tatiane E.",
+        "neighborhood": "Market Common"
+      },
+      {
+        "rating": 5,
+        "title": "Professional Repair",
+        "review": "<p>The repair was done quickly without cutting corners, and the quality of the work really shows. Brandon's customer service was truly outstanding and made the process stress-free.</p>",
+        "reviewer_name": "Carolina Barros C.",
+        "neighborhood": "Grande Dunes"
+      },
+      {
+        "rating": 5,
+        "title": "Insurance Claim Help",
+        "review": "<p>Getting a roof through insurance can be a headache, but the team was super knowledgeable and made the whole process seamless for us. They were helpful and transparent throughout.</p>",
+        "reviewer_name": "Wilson P.",
+        "neighborhood": "Carolina Forest"
+      }
+    ]
+  }
+]
