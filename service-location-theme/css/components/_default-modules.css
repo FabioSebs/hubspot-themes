@@ -736,20 +736,36 @@
 .sl-all-locations .sl-all-locations__county ul {
   list-style: none;
   margin: 0;
-  padding: 0 1.1rem 0.9rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
+  padding: 0.2rem 1.1rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 1.25rem;
+  row-gap: 0.65rem;
 }
 
 .sl-all-locations .sl-all-locations__county li a {
-  font-size: 0.875rem;
-  color: var(--sl-text);
+  font-size: 0.82rem;
+  line-height: 1.3;
+  color: var(--sl-muted);
+  font-weight: 600;
   text-decoration: none;
 }
 
 .sl-all-locations .sl-all-locations__county li a:hover {
   text-decoration: underline;
+  color: var(--sl-text);
+}
+
+@media (max-width: 767px) {
+  .sl-all-locations .sl-all-locations__county ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .sl-all-locations .sl-all-locations__county ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 .sl-all-locations .sl-all-locations__map {
