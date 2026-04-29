@@ -1,0 +1,47 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: HubDB Service Page
+-->
+<!doctype html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+  <head>
+    <meta charset="utf-8">
+    {% if page_meta.html_title or pageTitle %}<title>{{ page_meta.html_title or pageTitle }}</title>{% endif %}
+    {% if brand_settings.favicon.src %}<link rel="shortcut icon" href="{{ brand_settings.favicon.src }}" />{% endif %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+    {{ require_css(get_asset_url("../service-theme/css/main.css")) }}
+    {{ require_css(get_asset_url("../service-theme/css/theme-overrides.css")) }}
+    {{ standard_header_includes }}
+  </head>
+  <body>
+    <div class="body-wrapper {{ builtin_body_classes }}">
+      {% global_partial path="../service-theme/templates/partials/header.html" %}
+
+      <main id="main-content" class="body-container-wrapper">
+        {% dnd_area "dnd_area"
+          label="Main section",
+          class="body-container body-container--service"
+        %}
+          {% include_dnd_partial path="../service-theme/sections/hero-banner.html" %}
+          {% include_dnd_partial path="../service-theme/sections/service-areas.html" %}
+          {% include_dnd_partial path="../service-theme/sections/why-choose.html" %}
+          {% include_dnd_partial path="../service-theme/sections/who-we-are.html" %}
+          {% include_dnd_partial path="../service-theme/sections/signs.html" %}
+          {% include_dnd_partial path="../service-theme/sections/right-contractor.html" %}
+          {% include_dnd_partial path="../service-theme/sections/trust.html" %}
+          {% include_dnd_partial path="../service-theme/sections/why-myrtle-beach.html" %}
+          {% include_dnd_partial path="../service-theme/sections/cost.html" %}
+          {% include_dnd_partial path="../service-theme/sections/benefits.html" %}
+          {% include_dnd_partial path="../service-theme/sections/faq.html" %}
+          {% include_dnd_partial path="../service-theme/sections/steps.html" %}
+          {% include_dnd_partial path="../service-theme/sections/final-cta.html" %}
+        {% end_dnd_area %}
+      </main>
+
+      {% global_partial path="../service-theme/templates/partials/footer.html" %}
+    </div>
+    {{ require_js(get_asset_url("../service-theme/js/main.js")) }}
+    {{ standard_footer_includes }}
+  </body>
+</html>

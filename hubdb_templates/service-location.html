@@ -1,0 +1,45 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: HubDB Service Location Page
+-->
+<!doctype html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+  <head>
+    <meta charset="utf-8">
+    {% if page_meta.html_title or pageTitle %}<title>{{ page_meta.html_title or pageTitle }}</title>{% endif %}
+    {% if brand_settings.favicon.src %}<link rel="shortcut icon" href="{{ brand_settings.favicon.src }}" />{% endif %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+    {{ require_css(get_asset_url("../service-location-theme/css/main.css")) }}
+    {{ require_css(get_asset_url("../service-location-theme/css/theme-overrides.css")) }}
+    {{ standard_header_includes }}
+  </head>
+  <body>
+    <div class="body-wrapper {{ builtin_body_classes }}">
+      {% global_partial path="../service-location-theme/templates/partials/header.html" %}
+
+      <main id="main-content" class="body-container-wrapper">
+        {% dnd_area "dnd_area"
+          label="Main section",
+          class="body-container body-container--home body-container--service-location"
+        %}
+          {% include_dnd_partial path="../service-location-theme/sections/hero.html" %}
+          {% include_dnd_partial path="../service-location-theme/sections/who-we-are.html" %}
+          {% include_dnd_partial path="../service-location-theme/sections/primary-services.html" %}
+          {% include_dnd_partial path="../service-location-theme/sections/other-services.html" %}
+          {% include_dnd_partial path="../service-location-theme/sections/why-choose.html" %}
+          {% include_dnd_partial path="../service-location-theme/sections/process.html" %}
+          {% include_dnd_partial path="../service-location-theme/sections/all-locations.html" %}
+          {% include_dnd_partial path="../service-location-theme/sections/surrounding-areas.html" %}
+          {% include_dnd_partial path="../service-location-theme/sections/reviews.html" %}
+          {% include_dnd_partial path="../service-location-theme/sections/faq.html" %}
+          {% include_dnd_partial path="../service-location-theme/sections/estimate-cta.html" %}
+        {% end_dnd_area %}
+      </main>
+
+      {% global_partial path="../service-location-theme/templates/partials/footer.html" %}
+    </div>
+    {{ require_js(get_asset_url("../service-location-theme/js/main.js")) }}
+    {{ standard_footer_includes }}
+  </body>
+</html>
