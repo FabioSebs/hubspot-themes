@@ -1,0 +1,56 @@
+<!--
+  templateType: section
+  label: Who we are
+  isAvailableForNewContent: true
+  description: "Two-column with content + CTA on the left and image on the right."
+-->
+{% dnd_section
+  class="st-who-we-are",
+  background_color={{ context.background_color or "#f7f8fa" }},
+  padding={
+    "default": {
+      "top": 80,
+      "right": 20,
+      "bottom": 80,
+      "left": 20
+    },
+    "mobile": {
+      "top": 56,
+      "right": 20,
+      "bottom": 56,
+      "left": 20
+    }
+  },
+  vertical_alignment="MIDDLE"
+%}
+  {% dnd_module
+    path="@hubspot/rich_text",
+    html={{
+      context.content
+      or '<div class="st-who-we-are__content">'
+        ~ '<h2>Making Roof Repairs Simple and Worry-Free in Myrtle Beach</h2>'
+        ~ '<p>Locals throughout Myrtle Beach, including the entire Grand Strand, know they can trust your roof to our team of experienced roofers — built on years of serving the community. Whether it&#39;s missing shingles, leaks, or storm damage, you need a roofing expert. Right here.</p>'
+        ~ '<p>At Linta Roofing, we take the time to understand your concerns and provide repairs that last, not temporary fixes.</p>'
+        ~ '<a class="st-who-we-are__btn" href="#">About Us</a>'
+      ~ '</div>'
+    }},
+    offset=0,
+    width=6
+  %}
+  {% end_dnd_module %}
+
+  {% dnd_module
+    path="@hubspot/linked_image",
+    img={
+      "alt": context.image_alt or "Linta Roofing team",
+      "loading": context.image_loading or "lazy",
+      "size_type": "auto_custom_max",
+      "max_width": context.image_width or 620,
+      "max_height": context.image_height or 420,
+      "src": context.image or get_asset_url("../assets/team-image.jpg")
+    },
+    offset=6,
+    width=6
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

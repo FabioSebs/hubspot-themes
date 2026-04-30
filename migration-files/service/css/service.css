@@ -1,0 +1,1229 @@
+/* =====================================================================
+   Service page — section styles
+   Drop-in stylesheet for the 13 sections used on the Service template:
+     hero-banner, service-areas, why-choose, who-we-are, signs,
+     right-contractor, trust, why-myrtle-beach, cost, benefits, faq,
+     steps, final-cta
+   ===================================================================== */
+
+/* =========================================================================
+   Service theme tokens
+   ========================================================================= */
+
+:root {
+  --st-yellow: #FFD500;
+  --st-yellow-hover: #e6c000;
+  --st-navy: #0F1A2A;
+  --st-navy-soft: #1a2638;
+  --st-black: #000;
+  --st-text: #1f2937;
+  --st-muted: #6b7280;
+  --st-border: #e5e7eb;
+  --st-card-bg: #fff;
+  --st-bg-soft: #f7f8fa;
+  --st-success: #10b981;
+  --st-danger: #ef4444;
+}
+
+/* =========================================================================
+   Hero banner
+   ========================================================================= */
+
+.st-hero-banner {
+  position: relative;
+}
+
+.st-hero-banner > .row-fluid {
+  align-items: center;
+}
+
+.st-hero-banner,
+.st-hero-banner p,
+.st-hero-banner h1,
+.st-hero-banner h2,
+.st-hero-banner h3,
+.st-hero-banner li {
+  color: #fff;
+}
+
+.st-hero-banner__content {
+  max-width: 36rem;
+}
+
+.st-hero-banner h1 {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  margin: 0 0 1.25rem;
+}
+
+.st-hero-banner__lead {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 1.75rem;
+}
+
+.st-hero-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.st-hero-banner__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: filter 0.2s, background 0.2s, color 0.2s;
+}
+
+.st-hero-banner__btn--primary {
+  background: var(--st-yellow);
+  color: var(--st-black);
+}
+
+.st-hero-banner__btn--primary:hover {
+  background: var(--st-yellow-hover);
+  color: var(--st-black);
+}
+
+.st-hero-banner__btn--secondary {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.st-hero-banner__btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.st-hero-banner__trust {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.5rem;
+}
+
+.st-hero-banner__trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.st-hero-banner__trust-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--st-yellow);
+  color: var(--st-black);
+  font-size: 0.7rem;
+  font-weight: 800;
+  flex: 0 0 18px;
+}
+
+.st-hero-banner .hs_cos_wrapper_type_linked_image img {
+  border-radius: 14px;
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 767px) {
+  .st-hero-banner__trust {
+    grid-template-columns: 1fr;
+  }
+  .st-hero-banner__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .st-hero-banner__btn {
+    width: 100%;
+  }
+}
+
+/* =========================================================================
+   Service areas (find roof repair near you)
+   ========================================================================= */
+
+.st-service-areas {
+  position: relative;
+}
+
+.st-service-areas .st-service-areas__heading {
+  text-align: center;
+  max-width: 56rem;
+  margin: 0 auto 3rem;
+}
+
+.st-service-areas .st-service-areas__heading h2 {
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  line-height: 1.15;
+  margin: 0 0 0.75rem;
+  font-weight: 800;
+  color: var(--st-text);
+}
+
+.st-service-areas .st-service-areas__heading p {
+  margin: 0;
+  color: var(--st-muted);
+  font-size: 0.95rem;
+}
+
+.st-service-areas .st-service-areas__groups {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.st-service-areas .st-service-areas__group-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--st-text);
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--st-border);
+  letter-spacing: 0.01em;
+}
+
+.st-service-areas .st-service-areas__group-title--accent {
+  border-bottom-color: var(--st-yellow);
+  border-bottom-width: 2px;
+}
+
+.st-service-areas .st-service-areas__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.st-service-areas .st-service-areas__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--st-border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--st-text);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.st-service-areas .st-service-areas__pill:hover {
+  border-color: var(--st-yellow);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  color: var(--st-text);
+}
+
+.st-service-areas .st-service-areas__pin {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/><circle cx='12' cy='10' r='3'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.st-service-areas .st-service-areas__cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.st-service-areas .st-service-areas__cta-button {
+  display: inline-block;
+  background: var(--st-yellow);
+  color: var(--st-black);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: background 0.2s;
+}
+
+.st-service-areas .st-service-areas__cta-button:hover {
+  background: var(--st-yellow-hover);
+  color: var(--st-black);
+}
+
+.st-service-areas .st-service-areas__cta-note {
+  margin: 0.85rem 0 0;
+  font-size: 0.9rem;
+  color: var(--st-text);
+}
+
+.st-service-areas .st-service-areas__cta-note a {
+  color: var(--st-text);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.st-service-areas .st-service-areas__trust {
+  list-style: none;
+  margin: 3rem 0 0;
+  padding: 1.75rem 0 0;
+  border-top: 1px solid var(--st-border);
+  border-bottom: 4px solid var(--st-yellow);
+  padding-bottom: 1.75rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  text-align: center;
+}
+
+.st-service-areas .st-service-areas__trust li {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--st-text);
+  font-weight: 600;
+}
+
+.st-service-areas .st-service-areas__trust-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--st-yellow);
+  color: var(--st-yellow);
+  font-size: 0.7rem;
+  font-weight: 800;
+  flex: 0 0 16px;
+}
+
+@media (max-width: 1024px) {
+  .st-service-areas .st-service-areas__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .st-service-areas .st-service-areas__trust {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .st-service-areas .st-service-areas__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================================
+   Why homeowners choose us — 3 card grid with circle icons
+   ========================================================================= */
+
+.st-why-choose {
+  position: relative;
+}
+
+.st-why-choose .st-why-choose__heading {
+  text-align: center;
+  margin: 0 auto 3rem;
+}
+
+.st-why-choose .st-why-choose__heading h2 {
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  line-height: 1.15;
+  margin: 0;
+  font-weight: 800;
+  color: var(--st-text);
+}
+
+.st-why-choose .st-why-choose__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.st-why-choose .st-why-choose__card {
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.st-why-choose .st-why-choose__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: var(--st-yellow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.st-why-choose .st-why-choose__icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--st-black);
+}
+
+.st-why-choose .st-why-choose__card h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  color: var(--st-text);
+}
+
+.st-why-choose .st-why-choose__card p {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--st-muted);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .st-why-choose .st-why-choose__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* =========================================================================
+   Who we are / Making roof repairs simple
+   ========================================================================= */
+
+.st-who-we-are {
+  position: relative;
+}
+
+.st-who-we-are > .row-fluid {
+  align-items: center;
+}
+
+.st-who-we-are .st-who-we-are__content {
+  max-width: 32rem;
+}
+
+.st-who-we-are .st-who-we-are__content h2 {
+  font-size: clamp(1.75rem, 2.6vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--st-text);
+  margin: 0 0 1rem;
+}
+
+.st-who-we-are .st-who-we-are__content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--st-muted);
+  margin: 0 0 1rem;
+}
+
+.st-who-we-are .st-who-we-are__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--st-yellow);
+  color: var(--st-black);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 0.75rem;
+  transition: background 0.2s;
+}
+
+.st-who-we-are .st-who-we-are__btn:hover {
+  background: var(--st-yellow-hover);
+  color: var(--st-black);
+}
+
+.st-who-we-are .hs_cos_wrapper_type_linked_image img {
+  border-radius: 12px;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .st-who-we-are .st-who-we-are__content {
+    max-width: none;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* =========================================================================
+   Signs you need roof repair — 5 cards 3+2 with square icons
+   ========================================================================= */
+
+.st-signs {
+  position: relative;
+}
+
+.st-signs .st-signs__heading {
+  text-align: center;
+  max-width: 56rem;
+  margin: 0 auto 2.5rem;
+}
+
+.st-signs .st-signs__heading h2 {
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--st-text);
+  margin: 0 0 0.75rem;
+}
+
+.st-signs .st-signs__heading p {
+  margin: 0;
+  color: var(--st-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.st-signs .st-signs__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.st-signs .st-signs__card {
+  background: #fff;
+  border: 1px solid var(--st-border);
+  border-radius: 10px;
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+
+.st-signs .st-signs__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--st-yellow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.st-signs .st-signs__icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--st-black);
+}
+
+.st-signs .st-signs__card h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--st-text);
+  margin: 0 0 0.6rem;
+}
+
+.st-signs .st-signs__card p {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--st-muted);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .st-signs .st-signs__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .st-signs .st-signs__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================================
+   Right contractor — yellow bg with two comparison cards
+   ========================================================================= */
+
+.st-right-contractor {
+  position: relative;
+}
+
+.st-right-contractor .st-right-contractor__heading {
+  text-align: center;
+  margin: 0 auto 2.5rem;
+}
+
+.st-right-contractor .st-right-contractor__heading h2 {
+  font-size: clamp(1.75rem, 2.6vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--st-black);
+  margin: 0;
+}
+
+.st-right-contractor .st-right-contractor__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.st-right-contractor .st-right-contractor__card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.75rem 1.75rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.st-right-contractor .st-right-contractor__card h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin: 0 0 1rem;
+  color: var(--st-text);
+}
+
+.st-right-contractor .st-right-contractor__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.st-right-contractor .st-right-contractor__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  color: var(--st-text);
+  line-height: 1.5;
+}
+
+.st-right-contractor .st-right-contractor__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  flex: 0 0 18px;
+  margin-top: 2px;
+}
+
+.st-right-contractor .st-right-contractor__list--positive .st-right-contractor__icon {
+  border: 1.5px solid var(--st-success);
+  color: var(--st-success);
+}
+
+.st-right-contractor .st-right-contractor__list--negative .st-right-contractor__icon {
+  color: var(--st-danger);
+  font-size: 0.95rem;
+}
+
+.st-right-contractor .st-right-contractor__cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.st-right-contractor .st-right-contractor__btn {
+  display: inline-block;
+  background: var(--st-black);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: filter 0.2s;
+}
+
+.st-right-contractor .st-right-contractor__btn:hover {
+  filter: brightness(1.2);
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .st-right-contractor .st-right-contractor__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================================
+   Trust statement — image + checklist + CTA
+   ========================================================================= */
+
+.st-trust {
+  position: relative;
+}
+
+.st-trust > .row-fluid {
+  align-items: center;
+}
+
+.st-trust .st-trust__content {
+  max-width: 32rem;
+}
+
+.st-trust .st-trust__content h2 {
+  font-size: clamp(1.75rem, 2.6vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--st-text);
+  margin: 0 0 1rem;
+}
+
+.st-trust .st-trust__content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--st-muted);
+  margin: 0 0 1.25rem;
+}
+
+.st-trust .st-trust__checklist {
+  list-style: none;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.st-trust .st-trust__checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--st-text);
+}
+
+.st-trust .st-trust__check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--st-yellow);
+  color: var(--st-yellow);
+  font-size: 0.7rem;
+  font-weight: 800;
+  flex: 0 0 18px;
+  margin-top: 2px;
+}
+
+.st-trust .st-trust__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--st-yellow);
+  color: var(--st-black);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.st-trust .st-trust__btn:hover {
+  background: var(--st-yellow-hover);
+  color: var(--st-black);
+}
+
+.st-trust .hs_cos_wrapper_type_linked_image img {
+  border-radius: 12px;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .st-trust .st-trust__content {
+    max-width: none;
+    margin-top: 1.5rem;
+  }
+}
+
+/* =========================================================================
+   Why Myrtle Beach homeowners choose us — 5 cards 3+2 with circle icons
+   ========================================================================= */
+
+.st-why-myrtle {
+  position: relative;
+}
+
+.st-why-myrtle .st-why-myrtle__heading {
+  text-align: center;
+  margin: 0 auto 2.75rem;
+}
+
+.st-why-myrtle .st-why-myrtle__heading h2 {
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--st-text);
+  margin: 0;
+}
+
+.st-why-myrtle .st-why-myrtle__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.st-why-myrtle .st-why-myrtle__card {
+  background: #fff;
+  border: 1px solid var(--st-border);
+  border-radius: 10px;
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+
+.st-why-myrtle .st-why-myrtle__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: var(--st-yellow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.st-why-myrtle .st-why-myrtle__icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--st-black);
+}
+
+.st-why-myrtle .st-why-myrtle__card h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--st-text);
+  margin: 0 0 0.5rem;
+}
+
+.st-why-myrtle .st-why-myrtle__card p {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--st-muted);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .st-why-myrtle .st-why-myrtle__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .st-why-myrtle .st-why-myrtle__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================================
+   Cost — 3 image cards + CTA
+   ========================================================================= */
+
+.st-cost {
+  position: relative;
+}
+
+.st-cost .st-cost__heading {
+  text-align: center;
+  max-width: 56rem;
+  margin: 0 auto 2.5rem;
+}
+
+.st-cost .st-cost__heading h2 {
+  font-size: clamp(1.75rem, 2.6vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--st-text);
+  margin: 0 0 0.75rem;
+}
+
+.st-cost .st-cost__heading p {
+  margin: 0;
+  color: var(--st-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.st-cost .st-cost__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.st-cost .st-cost__card {
+  background: #fff;
+  border: 1px solid var(--st-border);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+
+.st-cost .st-cost__image {
+  height: 180px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.st-cost .st-cost__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.st-cost .st-cost__card h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--st-text);
+  margin: 1.1rem 0 0.4rem;
+}
+
+.st-cost .st-cost__price {
+  margin: 0;
+  color: var(--st-yellow);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.st-cost .st-cost__cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.st-cost .st-cost__btn {
+  display: inline-block;
+  background: var(--st-yellow);
+  color: var(--st-black);
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.st-cost .st-cost__btn:hover {
+  background: var(--st-yellow-hover);
+  color: var(--st-black);
+}
+
+@media (max-width: 900px) {
+  .st-cost .st-cost__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================================
+   Benefits — 4 cards with circle icons
+   ========================================================================= */
+
+.st-benefits {
+  position: relative;
+}
+
+.st-benefits .st-benefits__heading {
+  text-align: center;
+  margin: 0 auto 2.5rem;
+}
+
+.st-benefits .st-benefits__heading h2 {
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--st-text);
+  margin: 0;
+}
+
+.st-benefits .st-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.st-benefits .st-benefits__card {
+  background: #fff;
+  border: 1px solid var(--st-border);
+  border-radius: 10px;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+}
+
+.st-benefits .st-benefits__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: var(--st-yellow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.st-benefits .st-benefits__icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--st-black);
+}
+
+.st-benefits .st-benefits__card h3 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--st-text);
+  margin: 0 0 0.45rem;
+}
+
+.st-benefits .st-benefits__card p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--st-muted);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .st-benefits .st-benefits__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================================
+   FAQ section heading wrapper (accordion module brings its own styles)
+   ========================================================================= */
+
+.lt-faq-section {
+  position: relative;
+}
+
+.lt-faq-section .lt-faq-section__heading {
+  text-align: center;
+  max-width: 56rem;
+  margin: 0 auto 2rem;
+}
+
+.lt-faq-section .lt-faq-section__heading h2 {
+  margin: 0;
+  font-size: clamp(1.75rem, 2.6vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--st-text);
+}
+
+.lt-faq-section .lt-faq-section__heading p {
+  margin: 0.75rem 0 0;
+  color: var(--st-muted);
+  font-size: 0.95rem;
+}
+
+/* =========================================================================
+   3 simple steps — numbered process with images
+   ========================================================================= */
+
+.st-steps {
+  position: relative;
+}
+
+.st-steps .st-steps__heading {
+  text-align: center;
+  margin: 0 auto 2.5rem;
+}
+
+.st-steps .st-steps__heading h2 {
+  font-size: clamp(1.75rem, 2.6vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--st-text);
+  margin: 0;
+}
+
+.st-steps .st-steps__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.st-steps .st-steps__card {
+  text-align: center;
+  position: relative;
+}
+
+.st-steps .st-steps__image {
+  border-radius: 10px;
+  overflow: hidden;
+  height: 200px;
+  margin-bottom: 1.5rem;
+}
+
+.st-steps .st-steps__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.st-steps .st-steps__number {
+  position: absolute;
+  top: 178px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: var(--st-yellow);
+  color: var(--st-black);
+  font-weight: 800;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.st-steps .st-steps__card h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--st-text);
+  margin: 0.5rem 0 0.45rem;
+}
+
+.st-steps .st-steps__card p {
+  font-size: 0.85rem;
+  color: var(--st-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .st-steps .st-steps__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================================
+   Final CTA — dark navy with title, body, button, trust badges
+   ========================================================================= */
+
+.st-final-cta {
+  position: relative;
+}
+
+.st-final-cta,
+.st-final-cta p,
+.st-final-cta h1,
+.st-final-cta h2,
+.st-final-cta li {
+  color: #fff;
+}
+
+.st-final-cta .st-final-cta__content {
+  text-align: center;
+  max-width: 56rem;
+  margin: 0 auto 2rem;
+}
+
+.st-final-cta .st-final-cta__content h2 {
+  font-size: clamp(1.75rem, 2.6vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 800;
+  margin: 0 0 0.85rem;
+}
+
+.st-final-cta .st-final-cta__content p {
+  margin: 0 auto 1.75rem;
+  max-width: 36rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+.st-final-cta .st-final-cta__btn {
+  display: inline-block;
+  background: var(--st-yellow);
+  color: var(--st-black);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0.95rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.st-final-cta .st-final-cta__btn:hover {
+  background: var(--st-yellow-hover);
+  color: var(--st-black);
+}
+
+.st-final-cta .st-final-cta__trust {
+  list-style: none;
+  margin: 0 auto;
+  padding: 1.75rem 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  text-align: center;
+}
+
+.st-final-cta .st-final-cta__trust li {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+}
+
+.st-final-cta .st-final-cta__trust-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--st-yellow);
+  color: var(--st-yellow);
+  font-size: 0.7rem;
+  font-weight: 800;
+  flex: 0 0 16px;
+}
+
+@media (max-width: 767px) {
+  .st-final-cta .st-final-cta__trust {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

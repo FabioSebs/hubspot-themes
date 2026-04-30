@@ -1,0 +1,64 @@
+<!--
+  templateType: section
+  label: Hero banner
+  isAvailableForNewContent: true
+  description: "Dark hero with title, body, CTAs, trust indicators, and image."
+-->
+{% dnd_section
+  class="st-hero-banner",
+  background_color={{ context.background_color or "#0F1A2A" }},
+  padding={
+    "default": {
+      "top": 80,
+      "right": 20,
+      "bottom": 80,
+      "left": 20
+    },
+    "mobile": {
+      "top": 56,
+      "right": 20,
+      "bottom": 56,
+      "left": 20
+    }
+  },
+  vertical_alignment="MIDDLE"
+%}
+  {% dnd_module
+    path="@hubspot/rich_text",
+    html={{
+      context.content
+      or '<div class="st-hero-banner__content">'
+        ~ '<h1>Roof Repair in Myrtle Beach</h1>'
+        ~ '<p class="st-hero-banner__lead">Fast, reliable roof repairs that protect your home and your family, starting with your exact location. A damaged or leaking roof can put your home and your family at risk. But figuring out the repair process can be confusing. Start by selecting your location to get accurate pricing, availability, and service details.</p>'
+        ~ '<div class="st-hero-banner__actions">'
+          ~ '<a class="st-hero-banner__btn st-hero-banner__btn--primary" href="#">Get Free Roof Inspection</a>'
+          ~ '<a class="st-hero-banner__btn st-hero-banner__btn--secondary" href="#">Contact Us</a>'
+        ~ '</div>'
+        ~ '<ul class="st-hero-banner__trust">'
+          ~ '<li><span class="st-hero-banner__trust-icon" aria-hidden="true">✓</span>Licensed &amp; Insured</li>'
+          ~ '<li><span class="st-hero-banner__trust-icon" aria-hidden="true">✓</span>Local Experts</li>'
+          ~ '<li><span class="st-hero-banner__trust-icon" aria-hidden="true">✓</span>Insurance Claim Assistance</li>'
+          ~ '<li><span class="st-hero-banner__trust-icon" aria-hidden="true">✓</span>5-Star Rated</li>'
+        ~ '</ul>'
+      ~ '</div>'
+    }},
+    offset=0,
+    width=7
+  %}
+  {% end_dnd_module %}
+
+  {% dnd_module
+    path="@hubspot/linked_image",
+    img={
+      "alt": context.image_alt or "Roofer inspecting a roof",
+      "loading": context.image_loading or "eager",
+      "size_type": "auto_custom_max",
+      "max_width": context.image_width or 560,
+      "max_height": context.image_height or 480,
+      "src": context.image or get_asset_url("../assets/hero.jpg")
+    },
+    offset=7,
+    width=5
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

@@ -1,0 +1,80 @@
+<!--
+  templateType: section
+  label: Right contractor comparison
+  isAvailableForNewContent: true
+  description: "Yellow background section with two-card comparison and dark CTA."
+-->
+{% dnd_section
+  class="st-right-contractor",
+  background_color={{ context.background_color or "#FFD500" }},
+  padding={
+    "default": {
+      "top": 80,
+      "right": 20,
+      "bottom": 80,
+      "left": 20
+    },
+    "mobile": {
+      "top": 60,
+      "right": 20,
+      "bottom": 60,
+      "left": 20
+    }
+  },
+  vertical_alignment="MIDDLE"
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html={{
+          context.heading
+          or '<div class="st-right-contractor__heading"><h2>Is Linta Roofing the Right Contractor for the Job?</h2></div>'
+        }}
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html={{
+          context.cards
+          or '<div class="st-right-contractor__grid">'
+            ~ '<div class="st-right-contractor__card">'
+              ~ '<h3>We Might Be the Right Fit If:</h3>'
+              ~ '<ul class="st-right-contractor__list st-right-contractor__list--positive">'
+                ~ '<li><span class="st-right-contractor__icon" aria-hidden="true">✓</span>You want clear communication and expert guidance</li>'
+                ~ '<li><span class="st-right-contractor__icon" aria-hidden="true">✓</span>You prefer repairs that last over quick fixes</li>'
+                ~ '<li><span class="st-right-contractor__icon" aria-hidden="true">✓</span>You value transparency and professionalism</li>'
+              ~ '</ul>'
+            ~ '</div>'
+            ~ '<div class="st-right-contractor__card">'
+              ~ '<h3>We Might Not Be the Right Fit If:</h3>'
+              ~ '<ul class="st-right-contractor__list st-right-contractor__list--negative">'
+                ~ '<li><span class="st-right-contractor__icon" aria-hidden="true">✕</span>You&#39;re looking for a temporary patch job</li>'
+                ~ '<li><span class="st-right-contractor__icon" aria-hidden="true">✕</span>You want the cheapest possible materials</li>'
+                ~ '<li><span class="st-right-contractor__icon" aria-hidden="true">✕</span>You prefer cutting corners to save money</li>'
+              ~ '</ul>'
+            ~ '</div>'
+          ~ '</div>'
+        }}
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html={{
+          context.cta
+          or '<div class="st-right-contractor__cta"><a class="st-right-contractor__btn" href="#">Get an Instant Estimate</a></div>'
+        }}
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
