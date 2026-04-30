@@ -1,0 +1,887 @@
+/* =====================================================================
+   Location page — section styles
+   Drop-in stylesheet for the 10 sections used on the Location template:
+     hero-banner, location-map, service-areas, our-roofing-services,
+     why-choose-us, our-roofing-process, reviews, faq, estimate-cta,
+     bottom-strip
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   Hero banner
+   --------------------------------------------------------------------- */
+
+.lt-hero-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.lt-hero-banner:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+  z-index: 0;
+}
+
+.lt-hero-banner:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: #f4b400;
+  z-index: 2;
+}
+
+.lt-hero-banner > .row-fluid {
+  position: relative;
+  z-index: 1;
+  align-items: center;
+}
+
+.lt-hero-banner,
+.lt-hero-banner p,
+.lt-hero-banner li,
+.lt-hero-banner h1,
+.lt-hero-banner h2,
+.lt-hero-banner h3,
+.lt-hero-banner h4,
+.lt-hero-banner h5,
+.lt-hero-banner h6 {
+  color: #fff;
+}
+
+.lt-hero-banner h1 {
+  font-size: clamp(2.25rem, 3.5vw, 3.5rem);
+  line-height: 1.06;
+  margin: 0 0 1rem;
+}
+
+.lt-hero-banner .lt-hero-banner__logo,
+.lt-hero-banner .hs_cos_wrapper_type_linked_image {
+  margin-bottom: 1.25rem;
+}
+
+.lt-hero-banner .lt-hero-banner__logo img,
+.lt-hero-banner .hs_cos_wrapper_type_linked_image img {
+  height: auto;
+  max-width: 180px;
+}
+
+.lt-hero-banner .lt-hero-banner__content {
+  max-width: 40rem;
+}
+
+.lt-hero-banner .lt-hero-banner__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.lt-hero-banner .lt-hero-banner__trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  opacity: 0.95;
+}
+
+.lt-hero-banner .lt-hero-banner__trust-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #f4b400;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 18px;
+}
+
+.lt-hero-banner .lt-hero-banner__trust-icon:before {
+  content: "✓";
+  font-size: 12px;
+  line-height: 1;
+  color: #111;
+}
+
+.lt-hero-banner .lt-hero-banner__card-intro {
+  background: #fff;
+  color: #111;
+  padding: 1.5rem 1.5rem 0.75rem;
+  border-radius: 10px 10px 0 0;
+}
+
+.lt-hero-banner .lt-hero-banner__card-intro h4 {
+  color: #111;
+  margin: 0 0 0.75rem;
+}
+
+.lt-hero-banner .lt-hero-banner__card-intro ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lt-hero-banner .lt-hero-banner__card-intro li {
+  color: #111;
+  font-size: 0.9375rem;
+  margin: 0.35rem 0;
+}
+
+.lt-hero-banner .lt-hero-banner__card-intro li:before {
+  content: "✓";
+  color: #f4b400;
+  margin-right: 0.5rem;
+}
+
+.lt-hero-banner .lt-hero-banner__card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+  margin-top: 2.25rem;
+  max-width: 520px;
+  overflow: hidden;
+}
+
+.lt-hero-banner .lt-hero-banner__card,
+.lt-hero-banner .lt-hero-banner__card p,
+.lt-hero-banner .lt-hero-banner__card li,
+.lt-hero-banner .lt-hero-banner__card h1,
+.lt-hero-banner .lt-hero-banner__card h2,
+.lt-hero-banner .lt-hero-banner__card h3,
+.lt-hero-banner .lt-hero-banner__card h4,
+.lt-hero-banner .lt-hero-banner__card h5,
+.lt-hero-banner .lt-hero-banner__card h6 {
+  color: #111;
+}
+
+.lt-hero-banner .lt-hero-banner__card-actions {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.lt-hero-banner .lt-hero-banner__card-button {
+  align-items: center;
+  background: #f4b400;
+  border-radius: 0;
+  color: #111;
+  display: inline-flex;
+  font-weight: 700;
+  gap: 0.6rem;
+  justify-content: center;
+  padding: 0.9rem 1.2rem;
+  text-decoration: none;
+  width: 100%;
+}
+
+.lt-hero-banner .lt-hero-banner__card-button:after {
+  content: "→";
+}
+
+.lt-hero-banner .lt-hero-banner__card-button:hover,
+.lt-hero-banner .lt-hero-banner__card-button:focus {
+  background: #d99f00;
+  color: #111;
+}
+
+@media (max-width: 767px) {
+  .lt-hero-banner h1 {
+    margin-bottom: 0.75rem;
+  }
+
+  .lt-hero-banner .lt-hero-banner__content {
+    max-width: none;
+  }
+
+  .lt-hero-banner .lt-hero-banner__card {
+    margin-top: 1.5rem;
+    max-width: none;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Location map + copy
+   --------------------------------------------------------------------- */
+
+.lt-location-map {
+  position: relative;
+}
+
+.lt-location-map,
+.lt-location-map p,
+.lt-location-map li,
+.lt-location-map h1,
+.lt-location-map h2,
+.lt-location-map h3,
+.lt-location-map h4,
+.lt-location-map h5,
+.lt-location-map h6 {
+  color: #111;
+}
+
+.lt-location-map .map-embed,
+.lt-location-map .lt-location-map__map {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.lt-location-map .lt-location-map__map iframe {
+  width: 100%;
+  height: 360px;
+  border: 0;
+  display: block;
+}
+
+.lt-location-map .lt-location-map__map > * {
+  max-width: 100%;
+}
+
+.lt-location-map .lt-location-map__map-placeholder {
+  background: #f3f4f6;
+  border: 1px dashed #d1d5db;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  text-align: center;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.lt-location-map .lt-location-map__content {
+  max-width: 34rem;
+}
+
+.lt-location-map .lt-location-map__eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #6b7280;
+  margin: 0 0 0.75rem;
+}
+
+.lt-location-map .lt-location-map__content h2 {
+  font-size: clamp(2rem, 2.6vw, 2.75rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.lt-location-map .lt-location-map__content p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #4b5563;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .lt-location-map .lt-location-map__content {
+    max-width: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .lt-location-map .map-embed {
+    border-radius: 8px;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Service areas
+   --------------------------------------------------------------------- */
+
+.lt-service-areas {
+  position: relative;
+}
+
+.lt-service-areas .lt-service-areas__heading {
+  max-width: 56rem;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.lt-service-areas .lt-service-areas__heading h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 2.8vw, 3rem);
+  line-height: 1.1;
+}
+
+.lt-service-areas .lt-service-areas__heading p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.lt-service-areas .lt-service-areas__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem 2.25rem;
+}
+
+.lt-service-areas .lt-service-areas__card {
+  background: transparent;
+}
+
+.lt-service-areas .lt-service-areas__image {
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  height: 240px;
+  background: #111;
+}
+
+.lt-service-areas .lt-service-areas__image:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1) 60%, rgba(0,0,0,0));
+  z-index: 1;
+}
+
+.lt-service-areas .lt-service-areas__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.01);
+}
+
+.lt-service-areas .lt-service-areas__title {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.25rem;
+  margin: 0;
+  z-index: 2;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+}
+
+.lt-service-areas .lt-service-areas__body {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-top: 0;
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+
+.lt-service-areas .lt-service-areas__body p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.7;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+  .lt-service-areas .lt-service-areas__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .lt-service-areas .lt-service-areas__image {
+    height: 220px;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Our roofing services
+   --------------------------------------------------------------------- */
+
+.lt-roofing-services {
+  position: relative;
+}
+
+.lt-roofing-services,
+.lt-roofing-services p,
+.lt-roofing-services li,
+.lt-roofing-services h1,
+.lt-roofing-services h2,
+.lt-roofing-services h3,
+.lt-roofing-services h4,
+.lt-roofing-services h5,
+.lt-roofing-services h6 {
+  color: #111;
+}
+
+.lt-roofing-services .lt-roofing-services__heading h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.1;
+  margin: 0 0 3rem;
+  text-align: center;
+}
+
+.lt-roofing-services .lt-roofing-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lt-roofing-services .lt-roofing-services__card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.lt-roofing-services .lt-roofing-services__card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+.lt-roofing-services .lt-roofing-services__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.lt-roofing-services .lt-roofing-services__card h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+}
+
+.lt-roofing-services .lt-roofing-services__card p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+
+.lt-roofing-services .lt-roofing-services__link {
+  color: #f4b400;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lt-roofing-services .lt-roofing-services__link:after {
+  content: "→";
+  font-size: 0.9em;
+}
+
+.lt-roofing-services .lt-roofing-services__link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .lt-roofing-services .lt-roofing-services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .lt-roofing-services .lt-roofing-services__grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .lt-roofing-services .lt-roofing-services__card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .lt-roofing-services .lt-roofing-services__icon {
+    font-size: 2.25rem;
+  }
+
+  .lt-roofing-services .lt-roofing-services__card h3 {
+    font-size: 1.125rem;
+  }
+
+  .lt-roofing-services .lt-roofing-services__card p {
+    font-size: 0.875rem;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Why choose us
+   --------------------------------------------------------------------- */
+
+.lt-why-choose-us {
+  position: relative;
+}
+
+.lt-why-choose-us,
+.lt-why-choose-us p,
+.lt-why-choose-us li,
+.lt-why-choose-us h1,
+.lt-why-choose-us h2,
+.lt-why-choose-us h3,
+.lt-why-choose-us h4,
+.lt-why-choose-us h5,
+.lt-why-choose-us h6 {
+  color: #111;
+}
+
+.lt-why-choose-us .lt-why-choose-us__heading h2 {
+  font-size: clamp(2rem, 2.8vw, 2.75rem);
+  line-height: 1.15;
+  margin: 0;
+  text-align: center;
+}
+
+.lt-why-choose-us .lt-why-choose-us__heading p {
+  max-width: 58rem;
+  margin: 0.85rem auto 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: center;
+  color: #4b5563;
+}
+
+.lt-why-choose-us .lt-why-choose-us__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3.25rem 4.25rem;
+  max-width: 1100px;
+  margin: 3.75rem auto 0;
+}
+
+.lt-why-choose-us .lt-why-choose-us__item {
+  text-align: left;
+  padding: 0;
+}
+
+.lt-why-choose-us .lt-why-choose-us__icon-box {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4b400;
+  border-radius: 0;
+  margin-bottom: 1rem;
+}
+
+.lt-why-choose-us .lt-why-choose-us__icon-box svg {
+  width: 22px;
+  height: 22px;
+  stroke: #111;
+}
+
+.lt-why-choose-us .lt-why-choose-us__item h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.55rem;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.lt-why-choose-us .lt-why-choose-us__item p {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  margin: 0;
+  color: #4b5563;
+}
+
+@media (max-width: 1024px) {
+  .lt-why-choose-us .lt-why-choose-us__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .lt-why-choose-us .lt-why-choose-us__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .lt-why-choose-us .lt-why-choose-us__item h3 {
+    font-size: 1.05rem;
+  }
+
+  .lt-why-choose-us .lt-why-choose-us__item p {
+    font-size: 0.88rem;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Our roofing process
+   --------------------------------------------------------------------- */
+
+.lt-roofing-process {
+  position: relative;
+  background-color: #111;
+}
+
+.lt-roofing-process,
+.lt-roofing-process p,
+.lt-roofing-process li,
+.lt-roofing-process h1,
+.lt-roofing-process h2,
+.lt-roofing-process h3,
+.lt-roofing-process h4,
+.lt-roofing-process h5,
+.lt-roofing-process h6 {
+  color: #fff;
+}
+
+.lt-roofing-process .lt-roofing-process__heading {
+  text-align: center;
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.lt-roofing-process .lt-roofing-process__heading h2 {
+  font-size: clamp(2rem, 2.6vw, 2.75rem);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.lt-roofing-process .lt-roofing-process__heading p {
+  margin: 0.9rem auto 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.72);
+}
+
+.lt-roofing-process .lt-roofing-process__content {
+  margin-top: 3.5rem;
+}
+
+.lt-roofing-process .lt-roofing-process__grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 2.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.lt-roofing-process .lt-roofing-process__step {
+  text-align: left;
+}
+
+.lt-roofing-process .lt-roofing-process__icon {
+  color: #f4b400;
+  margin-bottom: 0.9rem;
+}
+
+.lt-roofing-process .lt-roofing-process__icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+}
+
+.lt-roofing-process .lt-roofing-process__step h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 0.55rem;
+}
+
+.lt-roofing-process .lt-roofing-process__step p {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  margin: 0;
+  color: rgba(255,255,255,0.72);
+}
+
+.lt-roofing-process .lt-roofing-process__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.75rem;
+}
+
+.lt-roofing-process .lt-roofing-process__button {
+  background: #f4b400;
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.85rem 1.35rem;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lt-roofing-process .lt-roofing-process__button:after {
+  content: "→";
+  font-size: 0.95em;
+}
+
+.lt-roofing-process .lt-roofing-process__button:hover {
+  filter: brightness(0.95);
+}
+
+@media (max-width: 1100px) {
+  .lt-roofing-process .lt-roofing-process__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.25rem 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .lt-roofing-process .lt-roofing-process__content {
+    margin-top: 2.5rem;
+  }
+
+  .lt-roofing-process .lt-roofing-process__grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Reviews
+   --------------------------------------------------------------------- */
+
+.lt-reviews-section {
+  position: relative;
+}
+
+.lt-reviews-section .lt-reviews-section__heading {
+  text-align: center;
+  max-width: 56rem;
+  margin: 0 auto 2.5rem;
+}
+
+.lt-reviews-section .lt-reviews-section__heading h2 {
+  margin: 0;
+  font-size: clamp(2rem, 2.6vw, 3rem);
+  line-height: 1.1;
+}
+
+.lt-reviews-section .lt-reviews-section__heading p {
+  margin: 0.75rem 0 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* ---------------------------------------------------------------------
+   FAQ
+   --------------------------------------------------------------------- */
+
+.lt-faq-section {
+  position: relative;
+}
+
+.lt-faq-section .lt-faq-section__heading {
+  text-align: center;
+  max-width: 56rem;
+  margin: 0 auto 2.5rem;
+}
+
+.lt-faq-section .lt-faq-section__heading h2 {
+  margin: 0;
+  font-size: clamp(2rem, 2.6vw, 3rem);
+  line-height: 1.1;
+}
+
+.lt-faq-section .lt-faq-section__heading p {
+  margin: 0.75rem 0 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* ---------------------------------------------------------------------
+   Estimate CTA
+   --------------------------------------------------------------------- */
+
+.lt-estimate-cta {
+  position: relative;
+}
+
+.lt-estimate-cta .lt-estimate-cta__content {
+  text-align: center;
+  max-width: 58rem;
+  margin: 0 auto 2rem;
+}
+
+.lt-estimate-cta .lt-estimate-cta__content h2 {
+  margin: 0;
+  font-size: clamp(2rem, 2.6vw, 3rem);
+  line-height: 1.1;
+  color: #111;
+}
+
+.lt-estimate-cta .lt-estimate-cta__content p {
+  margin: 0.85rem auto 0;
+  max-width: 48rem;
+  color: rgba(17,17,17,0.82);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.lt-estimate-cta .button-wrapper {
+  margin: 0.25rem 0 2rem;
+}
+
+.lt-estimate-cta .button-wrapper .button {
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 0.9rem 1.35rem;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.lt-estimate-cta .button-wrapper .button:after {
+  content: "→";
+  font-size: 1rem;
+}
+
+.lt-estimate-cta .button-wrapper .button:hover {
+  filter: brightness(0.92);
+}
+
+.lt-estimate-cta .lt-estimate-cta__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2.25rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.lt-estimate-cta .lt-estimate-cta__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(17,17,17,0.9);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.lt-estimate-cta .lt-estimate-cta__badge-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lt-estimate-cta .lt-estimate-cta__badge-icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* ---------------------------------------------------------------------
+   Bottom strip
+   --------------------------------------------------------------------- */
+
+.lt-bottom-strip {
+  position: relative;
+}
+
+.lt-bottom-strip .lt-bottom-strip__content {
+  text-align: center;
+}
+
+.lt-bottom-strip .lt-bottom-strip__content p {
+  margin: 0;
+  color: rgba(255,255,255,0.72);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}

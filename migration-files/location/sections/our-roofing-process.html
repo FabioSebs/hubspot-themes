@@ -1,0 +1,61 @@
+<!--
+  templateType: section
+  label: Our roofing process
+  isAvailableForNewContent: true
+  description: "Dark process section with 5 steps and CTA button."
+-->
+{% dnd_section
+  class="lt-roofing-process",
+  background_color={{ context.background_color or "#0b0b0b" }},
+  padding={
+    "default": {
+      "top": 90,
+      "right": 20,
+      "bottom": 90,
+      "left": 20
+    },
+    "mobile": {
+      "top": 64,
+      "right": 20,
+      "bottom": 64,
+      "left": 20
+    }
+  },
+  vertical_alignment="MIDDLE"
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html={{
+          context.heading
+          or '<div class="lt-roofing-process__heading"><h2>Our Roofing Process</h2><p>Our step-by-step process ensures a seamless and professional roofing journey for homeowners in Myrtle Beach, from the initial consultation to the final inspection.</p></div>'
+        }}
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html={{
+          context.steps
+          or '<div class="lt-roofing-process__content">'
+            ~ '<div class="lt-roofing-process__grid">'
+              ~ '<div class="lt-roofing-process__step"><div class="lt-roofing-process__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div><h3>Free Consultation</h3><p>Schedule a no-pressure meeting with our roofing experts to discuss your needs and explore the best solutions for your home.</p></div>'
+              ~ '<div class="lt-roofing-process__step"><div class="lt-roofing-process__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div><h3>Thorough Inspection</h3><p>Our team performs a comprehensive evaluation of your roof to identify any leaks, structural issues, or weather-related damage.</p></div>'
+              ~ '<div class="lt-roofing-process__step"><div class="lt-roofing-process__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></div><h3>Detailed Proposal</h3><p>Receive a transparent and detailed estimate that clearly outlines the scope of work, material options, and project timeline.</p></div>'
+              ~ '<div class="lt-roofing-process__step"><div class="lt-roofing-process__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></div><h3>Expert Installation</h3><p>Our skilled roofing professionals use high-quality materials and industry-leading techniques to ensure a durable and precise roof application.</p></div>'
+              ~ '<div class="lt-roofing-process__step"><div class="lt-roofing-process__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div><h3>Final Walkthrough</h3><p>We conduct a meticulous post-project review with you to ensure every detail meets your expectations and your complete satisfaction.</p></div>'
+            ~ '</div>'
+            ~ '<div class="lt-roofing-process__cta"><a class="lt-roofing-process__button" href="#">Schedule a Free Inspection</a></div>'
+          ~ '</div>'
+        }}
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
